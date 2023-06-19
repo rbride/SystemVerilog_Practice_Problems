@@ -36,3 +36,15 @@ operands, and returns a single bit result, i.e. the four bits of A are ANDed tog
 
 
 Do vector 5 problem again. 
+if you attach to wires it does not work
+
+
+add to project list
+Modules Hierachy
+ Shift 8 
+ Refresh yourself on the case switch statement
+
+A always * can be used to make a mux with a case switch based based based yeet
+
+Make the existing module that exist as the lower portions of the _add and _shift8
+
