@@ -6,12 +6,12 @@ https://link.springer.com/content/pdf/bbm:978-3-642-45309-0/1.pdf
 
 Notes From Basic Lesson: 
 Memorize the Xnor and nor table Dweeb 
-xnor                        Nor                         Xor
-in1     in2     out         in1     in2     out         in1     in2     out
-0       0       1           0       0       1           0       0       0
-0       1       0           0       1       0           0       1       1
-1       0       0           1       0       0           1       0       1
-1       1       1           1       1       0           1       1       0
+xnor                            Nor                             Xor
+in1     in2     out             in1     in2     out             in1     in2     out
+0       0       1               0       0       1               0       0       0
+0       1       0               0       1       0               0       1       1
+1       0       0               1       0       0               1       0       1
+1       1       1               1       1       0               1       1       0
 
 
 Memorize the operators:
@@ -21,3 +21,17 @@ https://www.bing.com/images/search?view=detailV2&ccid=gjm0yCBi&id=CFA2399235312F
 
 
 Notes From Vector Lesson: 
+lesson three not a whole lot of difference except on the visual output of the graph
+so their seems to be no timing difference 
+
+https://class.ece.uw.edu/cadta/verilog/reduction.html
+verilog has 6 reduction operators these operators accept a single vector (multiple bit) operand, performs the appropriate bit-wise reduction on all bits of the 
+operands, and returns a single bit result, i.e. the four bits of A are ANDed together to produce Y1
+& = reduction and
+| = reduction or
+~& reduction nand
+~| reduction nor
+^ reduction xor
+~^ reduction xnor  
+
+
