@@ -1,0 +1,23 @@
+File of Organized Notes
+
+Resources: 
+A few intersting circuit examples 
+https://link.springer.com/content/pdf/bbm:978-3-642-45309-0/1.pdf
+
+Notes From Basic Lesson: 
+Memorize the Xnor and nor table Dweeb 
+xnor                        Nor                         Xor
+in1     in2     out         in1     in2     out         in1     in2     out
+0       0       1           0       0       1           0       0       0
+0       1       0           0       1       0           0       1       1
+1       0       0           1       0       0           1       0       1
+1       1       1           1       1       0           1       1       0
+
+
+Memorize the operators:
+https://class.ece.uw.edu/cadta/verilog/operators.html
+memorize symbols too:
+https://www.bing.com/images/search?view=detailV2&ccid=gjm0yCBi&id=CFA2399235312FB0C0ED6EC34E192D2B5591BD20&thid=OIP.gjm0yCBiOP2eeOXO4Lh8JAHaFm&mediaurl=https%3a%2f%2fth.bing.com%2fth%2fid%2fR.8239b4c8206238fd9e78e5cee0b87c24%3frik%3dIL2RVSstGU7Dbg%26riu%3dhttp%253a%252f%252fegomachines.com%252fanimoid%252fann-hardware%252fgates.png%26ehk%3dBrbAkOUUgHJN5GNjTiQU6tLxu4IwnJTlkKsReHvA%252b4U%253d%26risl%3d%26pid%3dImgRaw%26r%3d0&exph=443&expw=585&q=Circuit+gate+symbols&simid=608034436101914028&FORM=IRPRST&ck=9FC1920E177C9956F062E67936374AAF&selectedIndex=0&ajaxhist=0&ajaxserp=0
+
+
+Notes From Vector Lesson: 

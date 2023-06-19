@@ -10,3 +10,6 @@ module _Vector0 (
     assign o0 = vec[0];
 
 endmodule
+
+// Default_nettype none disables the creation of implicit nets. Based. 
+// ... Skipped Exercise 1. 
