@@ -35,3 +35,4 @@ operands, and returns a single bit result, i.e. the four bits of A are ANDed tog
 ~^ reduction xnor  
 
 
+Do vector 5 problem again. 
