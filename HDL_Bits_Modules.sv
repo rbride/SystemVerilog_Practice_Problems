@@ -143,9 +143,34 @@ module top_module (
     end
 endmodule
 
+//Adder Subtractor
+//An adder-subtractor can be built froma an adder by optionally negating one of the inputs which is equivalent ot inverting the input
+//then adding 1, the net result is a circuit that can do two operations, (a+b+0) and (a+ ~b + 1)
 
+module top_module (
+    input [31:0] a,
+    input [31:0] b,
+    input sub,
+    output [31:0] sum
+);
+    wire cout_lower;
+    wire [31:0] b_out;
 
+    add16 _lower ( .a(a[15:0]), .b(b_out[15:0]), .sum(sum[15:0]), .cout(cout_lower));
+    add16 _upper ( .a(a[31:16]), .b(b_out[31:16]), .sum(sum[31:16]), .cin(cout_lower));
 
+    always @* begin
+        case(sub) 
+            1'b0    :   b_out = b;
+            //1'b1    :   b_out = b[31:0] ^ {32{sub}}; 
+            1'b1  :   b_out = ~b;
+        endcase
+
+    end
+
+endmodule
+//   :(
+//Redo Adder Subtractor you messed it up
 
 
 
