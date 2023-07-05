@@ -12,6 +12,7 @@ module _shift(
 
 endmodule
 
+
 module _shift8 ( 
         input clk, input [7:0] d, 
         input [1:0] sel, output [7:0] q
@@ -48,4 +49,72 @@ module _add (
         add16 _higher ( .a(a[31:16]), .b(b[31:16]), .cin(cout_lower), .sum(sum[31:16]) );
 
         
+endmodule
+
+
+//Module FADD Adder 2
+//Two levels of hierarchy, top module instatiates two copies of add16. each of which instantiate 16 copies of add1 
+//Write two modules add1 and top 
+//Govem ,pdi;e add16 wotj [erfpr,s a 16-bit addition 
+/* 
+Add 16 has the following declaration:
+module add16 ( input[15:0] a, input[15:0] b, input cin, output[15:0] sum, output cout );
+*/
+
+module top_module (
+        input [31:0] a,
+        input [31:0] b,
+        output [31:0] sum
+);
+        wire cout_lower;
+        add16 _lower ( .a(a[15:0]), .b(b[15:0]), .cin(1'b0), .sum(sum[15:0]), .cout(cout_lower) );
+        add16 _higher ( .a(a[31:16]), .b(b[31:16]), .cin(cout_lower), .sum(sum[31:16]) );
+
+endmodule 
+
+
+module add1 (
+        input a,
+        input b, 
+        input cin,
+        output sum,
+        output cout
+);
+    always_comb begin
+        case ( { a, b, cin } )
+            3'b111  :   begin
+                sum = 1'b1;
+                cout = 1'b1;
+            end
+            3'b110  :   begin
+                sum = 1'b0;
+                cout = 1'b1;
+            end
+            3'b101  :   begin
+                sum = 1'b0;
+                cout = 1'b1;
+            end
+            3'b100  :   begin
+                sum = 1'b1;
+                cout = 1'b0; 
+            end
+            3'b011  :   begin
+                sum = 1'b0;
+                cout = 1'b1;
+            end
+            3'b010  :   begin
+                sum = 1'b1;
+                cout = 1'b0;
+            end
+            3'b001  :   begin
+                sum = 1'b1;
+                cout = 1'b0;
+            end
+            3'b000  :   begin
+                sum = 1'b0;
+                cout = 1'b0;
+            end
+        endcase    
+    end
+    
 endmodule

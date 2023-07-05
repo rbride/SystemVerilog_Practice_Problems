@@ -51,3 +51,8 @@ Seen in _shift 8 in bits modules
 Make the existing module that exist as the lower portions of the _add and _shift8
 
 Memorize adder truth table
+
+Memorize and read about the required Always statements that accompany a Case switch statement
+
+Redo the ADDER 2 problem
+but you cannot use the full case switch do a single statment for sum and cout
