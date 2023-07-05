@@ -50,4 +50,4 @@ Seen in _shift 8 in bits modules
 
 Make the existing module that exist as the lower portions of the _add and _shift8
 
-
+Memorize adder truth table
