@@ -45,6 +45,9 @@ Modules Hierachy
  Refresh yourself on the case switch statement
 
 A always * can be used to make a mux with a case switch based based based yeet
+Seen in _shift 8 in bits modules
+
 
 Make the existing module that exist as the lower portions of the _add and _shift8
+
 
