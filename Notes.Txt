@@ -56,3 +56,8 @@ Memorize and read about the required Always statements that accompany a Case swi
 
 Redo the ADDER 2 problem
 but you cannot use the full case switch do a single statment for sum and cout
+
+redo adder subtractor problem, the final problem of modules, YOU CANNOT READ THE HINT
+
+Carry Select Adder Redo the problem
+THESE SHOULD ALL BE SECOND NATURE
