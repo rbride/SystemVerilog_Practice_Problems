@@ -1,0 +1,14 @@
+There are two main groups of data Objects, variables and nets, these two groups differ in the way 
+in which they are assgined and hold values. 
+
+Nets: 
+- Can be written by one or more continous assignments, primitive outputs, or through module ports
+- The Resultant value of multiple drivers is determined by the resolution function of the net type
+- Cannot be procedurally assigned, if a net on one side of a port is driven by a variable on the other
+    side, a continuous assignment is implied 
+- A FORCE statement can override the value of a net when released the net returns to the resovled value
+
+Variables:
+-Written by one or more procedural statements, including prcedural continous assignments
+    the last write determines the value. 
+-Alternatively, variables can be written by one continous assignment or one port.
