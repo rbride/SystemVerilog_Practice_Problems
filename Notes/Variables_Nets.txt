@@ -1,3 +1,15 @@
+Singular and Aggregate Types:
+-Singular Types All types except unpacked structs, unpacked union, and unpacked Array
+-A singular (type) variable or expression respresents a single value, symbol, or handle
+-Aggregate expression and variables represt a set or collection of singular values
+-Integral types are always singular even though they can be sliced into multiple singular values
+    (any type that can be reped as packed array, packed struct, packed union, enum var, or time var))
+-String is singular even though its indexed like an unnpacked array
+-Defined so that operators and fucntions can refer to them as a collective group
+    for example, some functions recursively descend into an aggreage var until it reaches a singular value
+    then performs the operation on the singular val
+
+
 There are two main groups of data Objects, variables and nets, these two groups differ in the way 
 in which they are assgined and hold values. 
 
@@ -12,3 +24,37 @@ Variables:
 -Written by one or more procedural statements, including prcedural continous assignments
     the last write determines the value. 
 -Alternatively, variables can be written by one continous assignment or one port.
+-Each assignment of an elem of a var is examined individually,
+    For example, all portions of packed type can be assigned differently
+-An assignment where left-hand side contains a slice is treated as a signle assignment to the entire slice
+    thus a struct or array can have one elm assigned procedurally and another elm assigned continously
+    and elems of a struct or array can be assigned with multiple continous assignements
+    provided that each elem is covered by no more tahn a signle continous assignment
+
+
+A declared variable initialization or a procedural continous asignment 
+is considered a procedural assignment. The force statement overides the procedural assign statement
+which in turns overrides the normal assignments. A force statement is neither continous nor a procedural
+
+A continous assignment shall be implied when a varable is connected to an input port declaration
+this makes assignments to a varable declared as as an input port illegal. A continous assignment 
+shall be impled when a variable is connected to the output port of an instance. 
+This makes additional procedural or continous assignments to a variable connected to the
+the output port of an instance illegal
+
+Vaiables cannot be connected to either side of an inout port, variables can be shared across ports with the 
+the ref port type (see 23.3.3) 
+
+An assignment as part of the decl of a variable is a variable initialization, not a continous assignment
+
+wire w = varA & varB;           // Net with a continous assignment
+logic v = constA & constB;      // Varable with initialization
+logic vw;                       // No initial assignment
+assign vw = varA & varB;        // Continous Assignment to a variable
+real circ;
+asssign circ = 2.0 * PI * R;    // Continous assignment to a variables
+
+wire w;                         // Equivalent to "wire logic w;"
+wire [15:0] ww;                 // Equivalent to "wire logic [15:0] ww;"
+
+Read 6.10 on implicit net Declares
